@@ -17,12 +17,12 @@
 // console.log(initials);
 
 // З використанням методу 'map'.
-const userNames = ["Петрик Ольга Іванівна", "Гнатюк Петро Антонович", "Рудко Андрій Опанасович"];
+// const userNames = ["Петрик Ольга Іванівна", "Гнатюк Петро Антонович", "Рудко Андрій Опанасович"];
 
-const initials = userNames.map(userName =>
-    userName.split(" ").map(part => part[0] + ".").join(""));
-initials.sort();
-console.log(initials);
+// const initials = userNames.map(userName =>
+//     userName.split(" ").map(part => part[0] + ".").join(""));
+// initials.sort();
+// console.log(initials);
 
 // 2. Задача на фільтрування масиву:
 // 2.1.1 Через умовну конструкцію:
@@ -41,17 +41,17 @@ console.log(initials);
 // console.log(filteredNames);
 
 // 2.1.2 За допомогою методу "forEach":
-// const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
-// const filteredNames = [];
-// userNames.forEach(userName => {
-//     const firstLetter = userName[0];
-//     const vowelLetter = ['У', 'Е', 'І', 'А', 'О', 'Є', 'Я', 'Ю', 'И'];
-//     if (vowelLetter.includes(firstLetter)) {
-//         filteredNames.push(userName);
+const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+const filteredNames = [];
+const vowelLetter = ['У', 'Е', 'І', 'А', 'О', 'Є', 'Я', 'Ю', 'И'];
+userNames.forEach(userName => {
+    const firstLetter = userName[0];
+    if (vowelLetter.includes(firstLetter)) {
+        filteredNames.push(userName);
 
-//     }
-// });
-// console.log(filteredNames);
+    }
+});
+console.log(filteredNames);
 
 // // 2.2.1 Через вбудований метод масивів.
 // const userNames = ['Петро', 'Емма', 'Юстин', 'Ілля', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
