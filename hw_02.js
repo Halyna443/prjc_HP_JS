@@ -7,35 +7,35 @@
 // Також вкажіть значення по замовчуванню для всіх цих параметрів (на ваш вибір).
 // Функція має коректно працювати навіть якщо початкова дата пізніше ніж кінцева дата.
 
-function getTimePeriod(startDate = new Date(), endDate = new Date(), unit = 'days') {
-    startDate = new Date(startDate);
-    endDate = new Date(endDate);
+// function getTimePeriod(startDate = new Date().toISOString(), endDate = new Date().toISOString(), unit = 'days') {
+//     startDate = new Date(startDate);
+//     endDate = new Date(endDate);
 
-    const earlierDate = startDate < endDate ? startDate : endDate;
-    const laterDate = startDate < endDate ? endDate : startDate;
+//     const earlierDate = startDate < endDate ? startDate : endDate;
+//     const laterDate = startDate < endDate ? endDate : startDate;
 
-    const timeDifference = laterDate - earlierDate;
+//     const timeDifference = (laterDate - earlierDate) / 1000;
 
-    switch (unit) {
-      case 'days':
-        return timeDifference / (24 * 60 * 60 * 1000);
-      case 'hours':
-        return timeDifference / (60 * 60 * 1000);
-      case 'minutes':
-        return timeDifference / (60 * 1000);
-      case 'seconds':
-        return timeDifference / 1000;
-      default:
-        return timeDifference;
-    }
-  }
+//     switch (unit) {
+//       case 'days':
+//         return timeDifference / (24 * 60 * 60);
+//       case 'hours':
+//         return timeDifference / (60 * 60);
+//       case 'minutes':
+//         return timeDifference / 60;
+//       case 'seconds':
+//         return timeDifference;
+//       default:
+//         return timeDifference * 1000;
+//     }
+//   }
 
-  const startDate = "31 Jan 2022";
-  const endDate = "03 Feb 2021";
-  const unit = "days";
+// const startDate = "31 Jan 2022";
+// const endDate = "03 Feb 2021";
+// const unit = "days";
 
-  const timePeriod = getTimePeriod(startDate, endDate, unit);
-  console.log(`${timePeriod} ${unit}`);
+// const timePeriod = getTimePeriod(startDate, endDate, unit);
+// console.log(`${timePeriod} ${unit}`);
 
 // 2. Задача про перетворення об'єкту
 // Допустимо у вас є об'єкт, у якому кожен ключ - це назва товару (одинм словом), а значення - його ціна.
@@ -51,8 +51,7 @@ function getTimePeriod(startDate = new Date(), endDate = new Date(), unit = 'day
 
 //     for (const key in data) {
 //         const lowerCaseKey = key.toLowerCase();
-//         const price = Number(data[key]).toFixed(2);
-//         updatedData[lowerCaseKey] = price;
+//         updatedData[lowerCaseKey] = Number(data[key]).toFixed(2);
 //     }
 //     return updatedData;
 // }
@@ -73,9 +72,8 @@ function getTimePeriod(startDate = new Date(), endDate = new Date(), unit = 'day
 //     }
 //     if (number % 2 === 0) {
 //         return recursiveOddSumTo(number - 1);
-//     } else {
-//         return number + recursiveOddSumTo(number - 2);
 //     }
+//         return number + recursiveOddSumTo(number - 2);
 // };
 
 // console.log(recursiveOddSumTo(1)) // 1
