@@ -9,7 +9,9 @@
 
 // function addThemAll(...args) {
 //     let sum = 0
-//     for (let arg of args) sum += arg;
+//     for (let arg of args) {
+//         sum += arg;
+//     }
 //     return sum;
 // }
 
@@ -41,40 +43,41 @@
 // — властивість за якою треба посортувати.
 // — опцію напрямку сортування (зростання чи спадання).
 
-// const movies = [
-//     {
-//         movieName: 'The Thing',
-//         releaseYear: 1982,
-//         directedBy: 'Carpenter',
-//         runningTimeInMinutes: 109,
-//     },
-//     {
-//         movieName: 'Aliens',
-//         releaseYear: 1986,
-//         directedBy: 'Cameron',
-//         runningTimeInMinutes: 137,
-//     },
-//     {
-//         movieName: 'Men in Black',
-//         releaseYear: 1997,
-//         directedBy: 'Sonnenfeld',
-//         runningTimeInMinutes: 98,
-//     },
-//     {
-//         movieName: 'Predator',
-//         releaseYear: 1987,
-//         directedBy: 'McTiernan',
-//         runningTimeInMinutes: 107,
-//     },
-// ];
+const movies = [
+    {
+        movieName: 'The Thing',
+        releaseYear: 1982,
+        directedBy: 'Carpenter',
+        runningTimeInMinutes: 109,
+    },
+    {
+        movieName: 'Aliens',
+        releaseYear: 1986,
+        directedBy: 'Cameron',
+        runningTimeInMinutes: 137,
+    },
+    {
+        movieName: 'Men in Black',
+        releaseYear: 1997,
+        directedBy: 'Sonnenfeld',
+        runningTimeInMinutes: 98,
+    },
+    {
+        movieName: 'Predator',
+        releaseYear: 1987,
+        directedBy: 'McTiernan',
+        runningTimeInMinutes: 107,
+    },
+];
 
-// console.log((`масив фільмів посортованих по року випуску.`), movies.sort(byProperty('releaseYear', '>')));
-// // виведе масив фільмів посортованих по року випуску, від старішого до новішого
-// console.log((`масив фільмів посортованих по їх тривалості`), movies.sort(byProperty('runningTimeInMinutes', '<')));
-// // виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого
-// console.log((`масив фільмів посортованих по назві`), movies.sort(byProperty('movieName', '>')));
-// // виведе масив фільмів посортованих по назві, в алфавітному порядку
+console.log((`масив фільмів посортованих по року випуску.`), movies.sort(byProperty('releaseYear', '>')));
+// виведе масив фільмів посортованих по року випуску, від старішого до новішого
+console.log((`масив фільмів посортованих по їх тривалості.`), movies.sort(byProperty('runningTimeInMinutes', '<')));
+// виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого
+console.log((`масив фільмів посортованих по назві.`), movies.sort(byProperty('movieName', '>')));
+// виведе масив фільмів посортованих по назві, в алфавітному порядку.
 
+// 3.1 З використанням інструкції 'if':
 // function byProperty(property, direction) {
 //     return function (a, b) {
 //         if (direction === '>') {
@@ -82,29 +85,41 @@
 //                 return 1;
 //             }
 //             else if (a[property] < b[property]) {
-//             return - 1;
+//                 return - 1;
 //             }
-//             return 0;    
+//             return 0;
 //         }
 //         else if (direction === '<') {
 //             if (a[property] < b[property]) {
 //                 return 1;
 //             }
 //             else if (a[property] > b[property]) {
-//             return - 1;
+//                 return - 1;
 //             }
-//             return 0;    
+//             return 0;
 //         }
-//     }    
+//     }
 // }
+// 3.2 З використанням тернарного оператора '?':
+
+function byProperty(property, direction) {
+    return function (a, b) {
+        if (direction === '>') {
+            return a[property] > b[property] ? 1 : -1;
+        }
+        else if (direction === '<') {
+            return a[property] < b[property] ? 1 : -1;
+        }
+    }
+}
 
 // 4. Напишіть функцію яка відфільтрує масив унікальних значень
 // Рішення має працювати незалежно від конкретних значень в масиві імен
 
-const userNames = ['Петро', 'Емма', 'Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена', 'Емма'];
+// const userNames = ['Петро', 'Емма', 'Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена', 'Емма'];
 
-function filterUnique(array) {
-return Array.from(new Set(array));
-}
+// function filterUnique(array) {
+//     return Array.from(new Set(array));
+// }
 
-console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
+// console.log(filterUnique(userNames)); // ['Петро', 'Емма', 'Марта', 'Яна', 'Василь', 'Антон', 'Олена'];
