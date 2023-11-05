@@ -1,20 +1,23 @@
 // 1. Напишіть функцію detonatorTimer(delay) використовуючи setInterval  
 // Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе 'BOOM!'
-// detonatorTimer(3);
+detonatorTimer(3);
 // 3
 // 2
 // 1
 // BOOM!
 
-// function detonatorTimer(delay) {
-//     let id = setInterval (function() {
-//         console.log(delay--);
-//         if (delay === 0) {
-//             clearInterval(id);
-//             console.log(`BOOM!`);
-//         }
-//     }, 1000);
-// };
+function detonatorTimer(delay) {
+    let id = setInterval(function () {
+        if (delay === 0) {
+            clearInterval(id);
+            console.log(`BOOM!`);
+        }
+        else {
+            console.log(delay);
+        }
+        delay--;
+    }, 1000);
+};
 
 // 2. Напишіть функцію detonatorTimer(delay) використовуючи вкладений setTimeout  
 // Вона виводить в консоль число кожну секунду, починаючи з delay (ціле число) і в кінці замість 0 виведе 'BOOM!'
@@ -26,17 +29,19 @@
 // BOOM!
 
 // function detonatorTimer(delay) {
+//     setTimeout(countdown, 1000);
+
 //     function countdown() {
-//         console.log(delay--);
 //         if (delay > 0) {
+//             console.log(delay);
+//             delay--;
 //             setTimeout(countdown, 1000);
+//         } else if (delay === 0) {
+//             console.log('BOOM!');
 //         }
-//         else {
-//             console.log(`BOOM!`);
-//         }
-//     };
-//     countdown();
+//     }
 // };
+
 
 // 3. Напишіть об'єкт в якому опишіть свої довільні властивості та довільні методи що ці властивості виводять. 
 
@@ -104,4 +109,3 @@
 // let slowedSomeFunction = slower(someFunction, 5); // обгортаєте свою довільну функцію 'someFunction' в декоратор і задає значення вповільнення
 
 // slowedSomeFunction(5, 7) // викликаєте декоратор
-  
