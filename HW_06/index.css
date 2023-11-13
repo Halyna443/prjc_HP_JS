@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 680px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-task-block,
+.filter-task-block {
+    margin-bottom: 25px;
+}
+
+.task-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+.task-input,
+.filter-input {
+    width: 100%;
+    padding: 10px;
+}
+
+.btn, .clear-tasks {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #67b3f1;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-add {
+    background-color: #2196F3;
+}
+
+.collection {
+    padding: 0;
+}
+
+.collection-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.delete-item,
+.edit-item {
+    cursor: pointer;
+    color: #e74c3c;
+}
+
+.edit-item {
+    color: #3498db;
+}
