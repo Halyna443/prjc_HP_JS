@@ -1,0 +1,28 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 0;
+}
+.button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 45%;
+    background-color: rgb(175, 175, 243);
+    border: 3px solid black;
+    border-radius: 3px;
+    width: 600px;
+    height: 80px;
+    text-align: center;
+    line-height: 50px;
+    color: blueviolet;
+    font-size: 16px;
+}
+.message {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 57%;
+}
