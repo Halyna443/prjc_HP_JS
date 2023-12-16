@@ -27,13 +27,17 @@ export class WeatherApp {
     // }
 
     async fetchData() {
-            const inputVal = input.value;
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${this.API_KEY}&units=metric`;
+        const inputVal = input.value;
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${this.API_KEY}&units=metric`;
+        try {
             const response = await fetch(url);
             const data = await response.json();
             console.log(data);
             this.updateDOM(data);
-        
+        } catch (error) {
+            throw new Error(error);
+        }
+
     }
 
     updateDOM = (data) => {
